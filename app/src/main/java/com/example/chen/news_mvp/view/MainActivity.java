@@ -2,12 +2,10 @@ package com.example.chen.news_mvp.view;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Window;
-import android.widget.TableLayout;
 
 import com.example.chen.news_mvp.R;
 import com.example.chen.news_mvp.presenter.MyFragmentPagerAdapter;
@@ -20,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private PagerAdapter pagerAdapter;
+    private MyFragmentPagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -38,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-
 
     }
 

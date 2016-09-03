@@ -3,7 +3,9 @@ package com.example.chen.news_mvp.presenter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +35,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public MyRecyclerViewAdapter(Context context, List<NewsBean.DataBean>dataBeanList){
         this.context = context;
         this.dataBeanList = dataBeanList;
-//        inflater = LayoutInflater.from(context);
     }
 
 
@@ -50,6 +51,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         final int pos = position;
+        System.out.println(dataBeanList.get(position).getSubject());
         if (viewHolder instanceof NormalViewHolder) {
             NormalViewHolder holder = (NormalViewHolder) viewHolder;
             final String subject = dataBeanList.get(position).getSubject();

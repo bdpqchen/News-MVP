@@ -38,9 +38,10 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
+        android:background="@color/colorWhite"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        />
 
-    </android.support.v4.view.ViewPager>
 </android.support.design.widget.CoordinatorLayout>
