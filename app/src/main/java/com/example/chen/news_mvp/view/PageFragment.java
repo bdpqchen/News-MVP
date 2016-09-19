@@ -50,7 +50,6 @@ public class PageFragment extends Fragment implements IPageFragment{
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         type = getArguments().getInt(PAGE_INDEX);
-
     }
 
     @Override
