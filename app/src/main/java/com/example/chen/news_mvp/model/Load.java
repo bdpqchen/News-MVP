@@ -1,7 +1,5 @@
 package com.example.chen.news_mvp.model;
 
-import android.util.Log;
-
 import com.example.chen.news_mvp.presenter.ConnectNetwork;
 
 import retrofit2.Call;
@@ -20,7 +18,7 @@ public class Load  {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("http://open.twtstudio.com/api/v1/")
                 .build();
-        NewsDataApiService newsDataApiService = retrofit.create(NewsDataApiService.class);
+        ApiService newsDataApiService = retrofit.create(ApiService.class);
         Call<NewsBean> call = newsDataApiService.getNewsData(type, page);
         call.enqueue(new Callback<NewsBean>() {
             @Override
@@ -45,7 +43,7 @@ public class Load  {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("http://open.twtstudio.com/api/v1/news/")
                 .build();
-        NewsContentDataApiService newsContentDataApiService = retrofit.create(NewsContentDataApiService.class);
+        ApiService newsContentDataApiService = retrofit.create(ApiService.class);
         Call<NewsContentBean> call = newsContentDataApiService.getNewsContent(index);
         call.enqueue(new Callback<NewsContentBean>() {
             @Override
