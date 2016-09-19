@@ -1,5 +1,7 @@
 package com.example.chen.news_mvp.model;
 
+import android.util.Log;
+
 import com.example.chen.news_mvp.presenter.ConnectNetwork;
 
 import retrofit2.Call;
@@ -18,6 +20,7 @@ public class Load  {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("http://open.twtstudio.com/api/v1/")
                 .build();
+
         ApiService newsDataApiService = retrofit.create(ApiService.class);
         Call<NewsBean> call = newsDataApiService.getNewsData(type, page);
         call.enqueue(new Callback<NewsBean>() {
@@ -43,6 +46,7 @@ public class Load  {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("http://open.twtstudio.com/api/v1/news/")
                 .build();
+
         ApiService newsContentDataApiService = retrofit.create(ApiService.class);
         Call<NewsContentBean> call = newsContentDataApiService.getNewsContent(index);
         call.enqueue(new Callback<NewsContentBean>() {
